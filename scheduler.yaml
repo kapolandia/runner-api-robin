@@ -1,0 +1,11 @@
+name: Call API Every 45 Seconds
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Every minute
+jobs:
+  call_api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call API
+        run: curl -X GET https://api-robin-pxwij990o-kapolandias-projects.vercel.app/api/saveData
